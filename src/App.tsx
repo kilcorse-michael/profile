@@ -1,23 +1,16 @@
-import { useState } from 'react'
-import profileImg from './assets/profile.jpg'
-
+import { useState } from "react";
+import frontGroundImg from "./assets/1.png";
+import profileImg from "./assets/profile.jpg";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
-    <div className='flex flex-col justify-start bg-orange-100 items-center top-0 h-screen w-screen'>
-      <img className='rounded-full mt-3' src={profileImg}/>
-      <h1>Michael Kilcorse</h1>
-      <ul className='flex flex-row'>
-        <li className='m-1'>Portfolio</li>
-        <li className='m-1'>About</li>
-        <li className='m-1'>Contact</li>
-      </ul>
-    </div>
-    </>
-  )
+    <img
+      className=" max-[400px]:rotate-90 max-[400px]:h-screen max-[400px]:w-auto max-h-full w-auto"
+      src={frontGroundImg}
+    ></img>
+  );
 }
 
-export default App
+export default App;
