@@ -16,7 +16,7 @@ export default function AboutSlide() {
           </p>
           <div className="">
             <Link to="/about">
-              <button className="bg-teal-400 border-black border-b-2 p-2 font-normal rounded-md text-black">
+              <button type="button" className="bg-teal-400 border-black border-b-2 p-2 font-normal rounded-md text-black">
                 READ MORE
               </button>
             </Link>
