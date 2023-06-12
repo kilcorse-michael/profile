@@ -2,12 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .path {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
   animation: dash 5s linear alternate;
   animation-fill-mode: forwards;
+}
+
+.stars {
+  animation: subtle-shift 5s linear alternate;
+  animation-iteration-count: infinite;
+}
+
+.planets {
+  offset-path: path("M 0 30 A 1 2 60 0 0 0 -48 A 1 2 60 0 0 0 30");
+  animation: move 30s infinite;
+}
+
+.planet-rotate {
+  animation: rotate 30s infinite;
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
 }
 
 @keyframes dash {
@@ -16,5 +38,25 @@
   }
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes subtle-shift {
+  from {
+    transform: translate(0px, 0px) rotateZ(0.001deg);
+    animation-timing-function: ease-in-out;
+  }
+  to {
+    transform: translate(0px, 12px) rotateZ(0.001deg);
+    animation-timing-function: ease-in-out;
   }
 }

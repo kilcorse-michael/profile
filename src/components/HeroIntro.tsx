@@ -1,7 +1,10 @@
 import { ParallaxBanner } from "react-scroll-parallax";
+import Sol from "./Sol";
 import frontImg from "../assets/2.png";
 import backImg from "../assets/1.png";
-
+import aboutPlanet from "../assets/planets/2.svg";
+import portfolioPlanet from "../assets/planets/3.svg";
+import contactPlanet from "../assets/planets/4.svg";
 export default function HeroIntro() {
   return (
     <>
@@ -11,30 +14,35 @@ export default function HeroIntro() {
           {
             speed: -25,
             children: (
-              <div className="absolute animate-fade-in m-2 inset-0 flex flex-col text-center items-center justify-center">
-                <p className="text-slate-400 mb-3 tracking-wide">
-                  Hello! My name is
-                </p>
-                <h1 className=" text-6xl md:text-8xl text-white tracking-wider font-thin">
-                  MICHAEL KILCORSE
-                </h1>
-                <p className="text-slate-400 mb-3 tracking-wide -mb-1">
-                  I am a{" "}
-                </p>
-                <h1 className="text-2xl md:text-4xl text-white font-thin">
-                  Designer & Developer
-                </h1>
-                <p className="text-slate-400 text-sm mb-3 tracking-wider">
-                  (and I really like space)
-                </p>
-              </div>
+              <>
+                <div className="absolute animate-fade-in m-2 inset-0 flex flex-col text-center items-center font-thin tracking-wider justify-center">
+                  <Sol />
+                  <div className="planets absolute h-[40%] top-[35%]">
+                    <div className="absolute planet-rotate left-10 -translate-y-60">
+                      <img src={aboutPlanet} />
+                      <h1 className="text-white text-2xl">ABOUT</h1>
+                    </div>
+                    <div className="absolute planet-rotate  right-20 translate-y-60">
+                      <img src={portfolioPlanet} />
+                      <h1 className="text-white rotate-180 text-2xl">
+                        PORTFOLIO
+                      </h1>
+                    </div>
+                    <div className="absolute  right-64 -translate-y-80">
+                      <img src={contactPlanet} />
+                      <h1 className="text-white rotate-[-106deg] translate-x-20 -translate-y-8 text-2xl">
+                        CONTACT
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </>
             ),
           },
-          { image: frontImg, speed: 5 },
+          { image: frontImg, speed: 5, className: "stars" },
         ]}
         className="h-screen w-screen"
       />
-      <div className="absolute flex text-center inset-0"></div>
     </>
   );
 }

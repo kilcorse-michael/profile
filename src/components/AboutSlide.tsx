@@ -1,5 +1,5 @@
 import { Parallax } from "react-scroll-parallax";
-import profilePic from "../assets/profile_pic.jpg";
+import profilePic from "../assets/profile_pic.png";
 import { Link } from "react-router-dom";
 
 export default function AboutSlide() {
@@ -29,7 +29,7 @@ export default function AboutSlide() {
           </div>
         </Parallax>
       </div>
-      <div className=" flex w-full h-full bg-black">
+      <div className=" flex items-center justify-center w-full h-full bg-black">
         <img alt="Michael Kilcorse" src={profilePic} />
       </div>
     </div>
