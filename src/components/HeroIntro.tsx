@@ -1,4 +1,5 @@
 import { ParallaxBanner } from "react-scroll-parallax";
+import { Link } from "react-router-dom";
 import Sol from "./Sol";
 import frontImg from "../assets/2.png";
 import backImg from "../assets/1.png";
@@ -10,36 +11,33 @@ export default function HeroIntro() {
     <>
       <ParallaxBanner
         layers={[
-          { image: backImg, speed: -50 },
+          { image: backImg, speed: -50, className: "space" },
+          { image: frontImg, speed: 5, className: "stars" },
           {
-            speed: -25,
             children: (
               <>
                 <div className="absolute animate-fade-in m-2 inset-0 flex flex-col text-center items-center font-thin tracking-wider justify-center">
                   <Sol />
-                  <div className="planets absolute h-[40%] top-[35%]">
-                    <div className="absolute planet-rotate left-10 -translate-y-60">
-                      <img src={aboutPlanet} />
-                      <h1 className="text-white text-2xl">ABOUT</h1>
-                    </div>
-                    <div className="absolute planet-rotate  right-20 translate-y-60">
+                  <div className="flex absolute planets">
+                    <Link to="/about">
+                      <div className="w-48 hover:drop-shadow-glow relative -top-72 -left-96">
+                        <img className="" src={aboutPlanet} />
+                        <h1 className="text-white text-2xl">ABOUT</h1>
+                      </div>
+                    </Link>
+                    <div className="relative hover:drop-shadow-glow -bottom-72 -left-96 w-36">
                       <img src={portfolioPlanet} />
-                      <h1 className="text-white rotate-180 text-2xl">
-                        PORTFOLIO
-                      </h1>
+                      <h1 className="text-white text-2xl">PORTFOLIO</h1>
                     </div>
-                    <div className="absolute  right-64 -translate-y-80">
+                    <div className="w-36  hover:drop-shadow-glow relative -right-72">
                       <img src={contactPlanet} />
-                      <h1 className="text-white rotate-[-106deg] translate-x-20 -translate-y-8 text-2xl">
-                        CONTACT
-                      </h1>
+                      <h1 className="text-white text-2xl">CONTACT</h1>
                     </div>
                   </div>
                 </div>
               </>
             ),
           },
-          { image: frontImg, speed: 5, className: "stars" },
         ]}
         className="h-screen w-screen"
       />

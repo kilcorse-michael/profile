@@ -15,12 +15,13 @@
 }
 
 .planets {
-  offset-path: path("M 0 30 A 1 2 60 0 0 0 -48 A 1 2 60 0 0 0 30");
-  animation: move 30s infinite;
+  animation: subtle-shift 7s linear alternate;
+  animation-iteration-count: infinite;
 }
 
-.planet-rotate {
-  animation: rotate 30s infinite;
+.space {
+  animation: subtle-shift 10s linear alternate;
+  animation-iteration-count: infinite;
 }
 
 @keyframes move {
